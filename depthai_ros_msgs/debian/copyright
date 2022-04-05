@@ -1,10 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: depthai-bridge
+Upstream-Name: depthai-ros-msgs
 Source: https://github.com/luxonis/depthai-ros
 
 Files: *
 Copyright: 2021 Luxonis <support@luxonis.com>
-License: Apache-2.0
+License: MIT
 
 Files: debian/*
 Copyright: 2022 Sachin Guruswamy <sachin@luxonis.com>

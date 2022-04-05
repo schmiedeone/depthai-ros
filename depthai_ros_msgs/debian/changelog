@@ -1,0 +1,5 @@
+ros-noetic-depthai-ros-msgs (2.4.0-focal1) focal; urgency=medium
+
+  * Test messages 
+
+ -- Sachin Guruswamy <sachin@luxonis.com>  Wed, 3 Apr 2022 10:46:36 -0500
