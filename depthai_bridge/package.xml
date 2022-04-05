@@ -62,6 +62,7 @@
   <depend>camera_info_manager</depend>
   <depend>depthai_ros_msgs</depend>
   <depend>image_transport</depend>
+  <depend>libdepthai-core</depend>
   <depend>libopencv-dev</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
