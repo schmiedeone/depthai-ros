@@ -1,0 +1,6 @@
+depthai_ros_msgs:
+    ubuntu: [ros-foxy-depthai-ros-msgs]
+depthai_bridge:
+    ubuntu: [ros-foxy-depthai-bridge]
+depthai_examples:
+    ubuntu: [ros-foxy-depthai-examples]

@@ -1,0 +1,13 @@
+Package: ros-foxy-depthai-bridge-dbgsym
+Package-Type: ddeb
+Source: ros-foxy-depthai-bridge
+Version: 2.4.0-0focal
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Sachin Guruswamy <sachin@luxonis.com>
+Installed-Size: 1850
+Depends: ros-foxy-depthai-bridge (= 2.4.0-0focal)
+Section: debug
+Priority: optional
+Description: debug symbols for ros-foxy-depthai-bridge
+Build-Ids: 4767a6c889eb92864ec7d08f6c2de1d00f52fab8

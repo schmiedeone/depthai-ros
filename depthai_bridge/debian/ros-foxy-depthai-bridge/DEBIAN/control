@@ -1,0 +1,9 @@
+Package: ros-foxy-depthai-bridge
+Version: 2.4.0-0focal
+Architecture: amd64
+Maintainer: Sachin Guruswamy <sachin@luxonis.com>
+Installed-Size: 67895
+Depends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libopencv-core4.2 (>= 4.2.0+dfsg), libopencv-imgproc4.2 (>= 4.2.0+dfsg), libstdc++6 (>= 9), libboost-dev, libopencv-dev, ros-foxy-camera-info-manager, ros-foxy-cv-bridge, ros-foxy-depthai-ros-msgs, ros-foxy-image-transport, ros-foxy-rclcpp, ros-foxy-robot-state-publisher, ros-foxy-sensor-msgs, ros-foxy-std-msgs, ros-foxy-stereo-msgs, ros-foxy-vision-msgs, ros-foxy-xacro
+Section: misc
+Priority: optional
+Description: The depthai_bridge package
