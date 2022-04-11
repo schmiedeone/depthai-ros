@@ -1,0 +1,4 @@
+depthai_ros_msgs:
+    ubuntu: [ros-galactic-depthai-ros-msgs]
+depthai_bridge:
+    ubuntu: [ros-galactic-depthai-bridge]

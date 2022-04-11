@@ -1,0 +1,13 @@
+Package: ros-galactic-depthai-bridge-dbgsym
+Package-Type: ddeb
+Source: ros-galactic-depthai-bridge
+Version: 2.4.0-0focal
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Sachin Guruswamy <sachin@luxonis.com>
+Installed-Size: 3268
+Depends: ros-galactic-depthai-bridge (= 2.4.0-0focal)
+Section: debug
+Priority: optional
+Description: debug symbols for ros-galactic-depthai-bridge
+Build-Ids: 806f8855df7ab73b0ee2f306c3ecf9ae952d51bf

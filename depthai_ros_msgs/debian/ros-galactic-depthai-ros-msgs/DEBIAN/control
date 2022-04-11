@@ -1,0 +1,9 @@
+Package: ros-galactic-depthai-ros-msgs
+Version: 2.4.0-0focal
+Architecture: amd64
+Maintainer: Sachin Guruswamy <sachin@luxonis.com>
+Installed-Size: 852
+Depends: libc6 (>= 2.14), libgcc-s1 (>= 3.0), libpython3.8 (>= 3.8.2), libstdc++6 (>= 5.2), ros-galactic-fastcdr, ros-galactic-builtin-interfaces, ros-galactic-geometry-msgs, ros-galactic-rclcpp, ros-galactic-rosidl-default-generators, ros-galactic-sensor-msgs, ros-galactic-std-msgs, ros-galactic-vision-msgs
+Section: misc
+Priority: optional
+Description: Package to keep interface independent of the driver
