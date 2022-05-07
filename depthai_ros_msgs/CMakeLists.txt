@@ -26,6 +26,7 @@ if ( ament_cmake_FOUND )
       "msg/SpatialDetectionArray.msg"
       "srv/TriggerNamed.srv"
       "srv/NormalizedImageCrop.srv"
+      "action/RecordTrigger.action"
       DEPENDENCIES builtin_interfaces geometry_msgs std_msgs vision_msgs
     )
     

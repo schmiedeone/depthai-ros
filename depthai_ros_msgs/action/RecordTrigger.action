@@ -1,0 +1,11 @@
+# Request
+bool start_record
+uint32 duration
+uint32 feedback_duration
+string[] topic_list
+---
+# Result
+string result
+---
+# Feedback
+uint32 time_elapsed
