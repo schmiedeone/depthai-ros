@@ -165,13 +165,7 @@ int main(int argc, char** argv){
         else{
             throw std::runtime_error("The camera seems not to be connected to the system");
         }
-        
-        
-        // dai::Device getDeviceInfo();
-        // dai::Device device = new dai::Device(pipeline);
-        
     }
-    // device = new dai::Device(pipeline);
 
     auto leftQueue = device->getOutputQueue("left", 30, false);
     auto rightQueue = device->getOutputQueue("right", 30, false);
