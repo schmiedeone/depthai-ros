@@ -6,6 +6,7 @@
     <arg name="mode"              default="depth" />
     <arg name="base_frame"        default="oak-d_frame" />
     <arg name="parent_frame"      default="oak-d-base-frame" />
+    <arg name="deviceId"          default="" />
 
     <arg name="cam_pos_x"         default="0.0" /> <!-- Position respect to base frame (i.e. "base_link) -->
     <arg name="cam_pos_y"         default="0.0" /> <!-- Position respect to base frame (i.e. "base_link) -->
@@ -47,6 +48,7 @@
         <param name="confidence"       value="$(arg confidence)"/>
         <param name="LRchecktresh"     value="$(arg LRchecktresh)"/>
         <param name="monoResolution"   value="$(arg monoResolution)"/>
+        <param name="deviceId"   value="$(arg deviceId)"/>        
     </node>            
 
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find depthai_examples)/rviz/stereoPointCloud_v1.rviz" />

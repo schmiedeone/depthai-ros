@@ -97,8 +97,13 @@ int main(int argc, char** argv){
     
     std::string tfPrefix, mode;
     std::string cameraParamUri;
+    std::string deviceId;
+    std::string tempDeviceId;
+    dai::DeviceInfo selectedDeviceInfo;
+    
     int badParams = 0;
     bool lrcheck, extended, subpixel, enableDepth;
+    bool cameraFound = false;
     int confidence = 200;
     int monoWidth, monoHeight;
     int LRchecktresh = 5;
@@ -114,6 +119,8 @@ int main(int argc, char** argv){
     badParams += !pnh.getParam("confidence",       confidence);
     badParams += !pnh.getParam("LRchecktresh",     LRchecktresh);
     badParams += !pnh.getParam("monoResolution",   monoResolution);
+    
+    pnh.param<std::string>("deviceId", deviceId, "");
 
     if (badParams > 0)
     {   
@@ -129,18 +136,53 @@ int main(int argc, char** argv){
     }
 
     std::tie(pipeline, monoWidth, monoHeight) = createPipeline(enableDepth, lrcheck, extended, subpixel, confidence, LRchecktresh, monoResolution);
+    dai::Device* device;
+    // dai::Device device(pipeline);
 
-    dai::Device device(pipeline);
-    auto leftQueue = device.getOutputQueue("left", 30, false);
-    auto rightQueue = device.getOutputQueue("right", 30, false);
+    if(deviceId == ""){
+        std::cout << "Device id not specified" << std::endl;
+        device = new dai::Device(pipeline);
+    }
+    else{
+        std::cout << "Looking for a specific device" << std::endl;
+        std::vector<dai::DeviceInfo> devices = dai::Device::getAllAvailableDevices();
+        for (int i = 0; i < devices.size(); i++)
+        {
+            tempDeviceId = devices[i].getMxId();
+            if (tempDeviceId == deviceId)
+            {
+                std::cout << "Found the device" << std::endl;
+                selectedDeviceInfo = devices[i];
+                cameraFound = true;
+                break;
+            }
+            
+        }
+        if (cameraFound == true)
+        {
+            device = new dai::Device(pipeline, selectedDeviceInfo);
+        }
+        else{
+            throw std::runtime_error("The camera seems not to be connected to the system");
+        }
+        
+        
+        // dai::Device getDeviceInfo();
+        // dai::Device device = new dai::Device(pipeline);
+        
+    }
+    // device = new dai::Device(pipeline);
+
+    auto leftQueue = device->getOutputQueue("left", 30, false);
+    auto rightQueue = device->getOutputQueue("right", 30, false);
     std::shared_ptr<dai::DataOutputQueue> stereoQueue;
     if (enableDepth) {
-        stereoQueue = device.getOutputQueue("depth", 30, false);
+        stereoQueue = device->getOutputQueue("depth", 30, false);
     }else{
-        stereoQueue = device.getOutputQueue("disparity", 30, false);
+        stereoQueue = device->getOutputQueue("disparity", 30, false);
     }
 
-    auto calibrationHandler = device.readCalibration();
+    auto calibrationHandler = device->readCalibration();
 
     auto boardName = calibrationHandler.getEepromData().boardName;
     if (monoHeight > 480 && boardName == "OAK-D-LITE") {
